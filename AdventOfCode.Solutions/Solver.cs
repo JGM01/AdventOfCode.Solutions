@@ -1,10 +1,7 @@
-﻿using AdventOfCode.Solutions._2021;
+﻿using AdventOfCode.SolutionsCSHARP._2021;
 using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
 
-namespace AdventOfCode.Solutions
+namespace AdventOfCode.SolutionsCSHARP
 {
     class Solver
     {

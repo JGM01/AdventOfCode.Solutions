@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 
-namespace AdventOfCode.Solutions._2021
+namespace AdventOfCode.SolutionsCSHARP._2021
 {
     class _2021Day02 : Solver
     {
