@@ -1,17 +1,15 @@
 ﻿using System.Collections.Generic;
-using System.IO;
 using System.Linq;
+using System.IO;
 
-namespace AdventOfCode.SolutionsCSHARP._2021
+namespace CSharpSolutions._2021
 {
     class _2021Day01 : Solver
     {
 
         public static readonly List<string> fileInput = new List<string>(File.ReadAllLines("A:/AOCINPUTS/day01.txt"));
-
-
         public static int PartOne()
-        { 
+        {
             var x = 0;
             var l = ConvertToIntList(fileInput, x);
 
@@ -37,8 +35,7 @@ namespace AdventOfCode.SolutionsCSHARP._2021
             return bigger;
         }
 
-
-        public static List<int> ConvertToIntList(List<string> input, int x) => 
+        public static List<int> ConvertToIntList(List<string> input, int x) =>
             input.Where(c => int.TryParse(c, out x))
                  .Select(c => x)
                  .ToList();

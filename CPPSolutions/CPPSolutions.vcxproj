@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{a4b47cdd-5210-4566-9891-7573b4bf09f6}</ProjectGuid>
-    <RootNamespace>AdventOfCodeSolutionsCPP</RootNamespace>
+    <ProjectGuid>{7205fc9d-12c0-471a-bf93-7aea95e0e3f5}</ProjectGuid>
+    <RootNamespace>CPPSolutions</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -139,7 +139,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Solver.cpp" />
+    <ClCompile Include="CPPSolutions.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Solver.cpp">
+    <ClCompile Include="CPPSolutions.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

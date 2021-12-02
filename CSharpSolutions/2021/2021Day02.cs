@@ -2,11 +2,10 @@
 using System.Collections.Generic;
 using System.IO;
 
-namespace AdventOfCode.SolutionsCSHARP._2021
+namespace CSharpSolutions._2021
 {
     class _2021Day02 : Solver
     {
-
         public static readonly List<string> fileInput = new List<string>(File.ReadAllLines("A:/AOCINPUTS/day02.txt"));
 
         public static int PartOne()
