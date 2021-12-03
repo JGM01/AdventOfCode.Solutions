@@ -13,7 +13,6 @@ namespace CSharpSolutions._2021
 
         public static int PartOne()
         {
-
             var hVal = 0;
             var depth = 0;
 
@@ -35,10 +34,9 @@ namespace CSharpSolutions._2021
                         break;
                 }
             }
-
             return depth * hVal;
-
         }
+
         public static int PartTwo()
         {
 
@@ -65,10 +63,7 @@ namespace CSharpSolutions._2021
                         break;
                 }
             }
-
             return depth * hVal;
-
         }
-
     }
 }

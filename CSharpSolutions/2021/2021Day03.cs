@@ -65,6 +65,5 @@ namespace CSharpSolutions._2021
 
             return Convert.ToInt32(diagnosticReport[0], 2);
         }
-
     }
 }

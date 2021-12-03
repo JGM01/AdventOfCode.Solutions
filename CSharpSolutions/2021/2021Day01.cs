@@ -38,7 +38,5 @@ namespace CSharpSolutions._2021
 
             return bigger;
         }
-
-
     }
 }

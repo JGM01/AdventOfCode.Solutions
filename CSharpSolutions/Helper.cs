@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 namespace Globals
 {
     public static class UtilityMethods
-    {
-        public static List<int> StringToIntList(List<string> input, int x) => input.Where(c => int.TryParse(c, out x)).Select(c => x).ToList();
+    { 
 
+        public static List<int> StringToIntList(List<string> input, int x) => input.Where(c => int.TryParse(c, out x)).Select(c => x).ToList();
 
     }
 }
