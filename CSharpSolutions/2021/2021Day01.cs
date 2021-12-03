@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using System.IO;
+using static Globals.UtilityMethods;
 
 namespace CSharpSolutions._2021
 {
@@ -14,7 +15,7 @@ namespace CSharpSolutions._2021
         public static int PartOne()
         {
             var x = 0;
-            var l = ConvertToIntList(fileInput, x);
+            var l = StringToIntList(fileInput, x);
 
             var bigger = 0;
             for (int i = 1; i < l.Count; i++)
@@ -28,7 +29,7 @@ namespace CSharpSolutions._2021
         public static int PartTwo()
         {
             var x = 0;
-            var l = ConvertToIntList(fileInput, x);
+            var l = StringToIntList(fileInput, x);
 
             var bigger = 0;
             for (int i = 3; i < l.Count; i++)
@@ -37,11 +38,6 @@ namespace CSharpSolutions._2021
 
             return bigger;
         }
-
-        static List<int> ConvertToIntList(List<string> input, int x) =>
-            input.Where(c => int.TryParse(c, out x))
-                 .Select(c => x)
-                 .ToList();
 
 
     }
