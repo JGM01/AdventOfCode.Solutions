@@ -10,7 +10,7 @@ namespace CSharpSolutions._2021
     class _2021Day01 : Solver
     {
 
-        public static readonly List<string> fileInput = new List<string>(File.ReadAllLines("A:/AOCINPUTS/day01.txt"));
+        static readonly List<string> fileInput = new List<string>(File.ReadAllLines("A:/AOCINPUTS/day01.txt"));
         public static int PartOne()
         {
             var x = 0;
@@ -38,7 +38,7 @@ namespace CSharpSolutions._2021
             return bigger;
         }
 
-        public static List<int> ConvertToIntList(List<string> input, int x) =>
+        static List<int> ConvertToIntList(List<string> input, int x) =>
             input.Where(c => int.TryParse(c, out x))
                  .Select(c => x)
                  .ToList();

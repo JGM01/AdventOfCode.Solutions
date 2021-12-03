@@ -12,14 +12,14 @@ namespace CSharpSolutions._2021
      */
     class _2021Day03 : Solver
     {
-        public static readonly List<string> fileInput = new List<string>(File.ReadAllLines("A:/AOCINPUTS/day03.txt"));
-        public static readonly List<string> fileInput2 = new List<string>(File.ReadAllLines("A:/AOCINPUTS/day03.txt"));
+        static readonly List<string> fileInput = new List<string>(File.ReadAllLines("A:/AOCINPUTS/day03.txt"));
+        static readonly List<string> fileInput2 = new List<string>(File.ReadAllLines("A:/AOCINPUTS/day03.txt"));
         
         public static int PartOne() => FindPowerConsumption(fileInput);
 
         public static int PartTwo() => FindOxygenRating(fileInput) * FindScrubberRating(fileInput2);
 
-        public static (int, int) FindAmountOfEachBitAtGivenIndex(List<string> l, int i)
+        static (int, int) FindAmountOfEachBitAtGivenIndex(List<string> l, int i)
         {
             var amtZero = 0;
             var amtOne = 0;
@@ -31,7 +31,7 @@ namespace CSharpSolutions._2021
             return (amtZero , amtOne);
         }
         
-        public static int FindPowerConsumption(List<string> diagnosticReport)
+        static int FindPowerConsumption(List<string> diagnosticReport)
         {
             var gammaRate = "";
             var epsilonRate = "";
@@ -45,7 +45,7 @@ namespace CSharpSolutions._2021
             return Convert.ToInt32(gammaRate, 2)*Convert.ToInt32(epsilonRate,2);
         } 
 
-        public static int FindOxygenRating(List<string> diagnosticReport)
+        static int FindOxygenRating(List<string> diagnosticReport)
         {
             for (int i =0; i < 12; i++)
             {
@@ -58,7 +58,7 @@ namespace CSharpSolutions._2021
             return Convert.ToInt32(diagnosticReport[0], 2);
         }
 
-        public static int FindScrubberRating(List<string> diagnosticReport)
+        static int FindScrubberRating(List<string> diagnosticReport)
         {
             for (int i =0; i < 12; i++)
             {
