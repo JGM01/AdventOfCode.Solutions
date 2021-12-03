@@ -19,16 +19,11 @@ namespace CSharpSolutions._2021
 
         public static int PartTwo() => FindOxygenRating(fileInput) * FindScrubberRating(fileInput2);
 
-        static (int, int) CountBitsAtGivenIndex(List<string> l, int i)
+        static (int, int) CountBitsPerIndex(List<string> l, int i)
         {
             var amtZero = 0;
-            var amtOne = 0;
-            foreach (string j in l)
-                if (j[i] == '0')
-                    amtZero++;
-                else
-                    amtOne++;
-            return (amtZero , amtOne);
+            foreach (string j in l) amtZero += j[i] == '0' ? 1 : 0;
+            return (amtZero , l.Count-amtZero);
         }
         
         static int FindPowerConsumption(List<string> diagnosticReport)
@@ -37,7 +32,7 @@ namespace CSharpSolutions._2021
             var epsilonRate = "";
             for (int i = 0; i < 12; i++)
             {
-                (var amtZero, var amtOne) = CountBitsAtGivenIndex(diagnosticReport, i);
+                (var amtZero, var amtOne) = CountBitsPerIndex(diagnosticReport, i);
 
                 epsilonRate += amtZero > amtOne ? '1' : '0';
                 gammaRate += amtZero > amtOne ? '0' : '1';
@@ -49,7 +44,7 @@ namespace CSharpSolutions._2021
         {
             for (int i =0; i < 12; i++)
             {
-                (var amtZero, var amtOne) = CountBitsAtGivenIndex(diagnosticReport, i);
+                (var amtZero, var amtOne) = CountBitsPerIndex(diagnosticReport, i);
 
                 if (diagnosticReport.Count == 1) break; 
                 diagnosticReport.RemoveAll(c => c[i] != ((amtOne > amtZero || amtOne == amtZero)? '1' : '0'));
@@ -62,7 +57,7 @@ namespace CSharpSolutions._2021
         {
             for (int i =0; i < 12; i++)
             {
-                (var amtZero, var amtOne) = CountBitsAtGivenIndex(diagnosticReport, i);
+                (var amtZero, var amtOne) = CountBitsPerIndex(diagnosticReport, i);
 
                 if (diagnosticReport.Count == 1) break; 
                 diagnosticReport.RemoveAll(c => c[i] != ((amtOne > amtZero || amtOne == amtZero)? '0' : '1'));
