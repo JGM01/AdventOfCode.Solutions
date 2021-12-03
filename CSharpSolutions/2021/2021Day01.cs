@@ -4,6 +4,9 @@ using System.IO;
 
 namespace CSharpSolutions._2021
 {
+    /* ADVENT OF CODE 2021 DAY 01
+     * LINK TO PROBLEM: https://adventofcode.com/2021/day/1
+     */
     class _2021Day01 : Solver
     {
 

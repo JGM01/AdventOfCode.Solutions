@@ -4,6 +4,9 @@ using System.IO;
 
 namespace CSharpSolutions._2021
 {
+    /* ADVENT OF CODE 2021 DAY 02
+     * LINK TO PROBLEM: https://adventofcode.com/2021/day/2
+     */
     class _2021Day02 : Solver
     {
         public static readonly List<string> fileInput = new List<string>(File.ReadAllLines("A:/AOCINPUTS/day02.txt"));
