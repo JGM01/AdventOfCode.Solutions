@@ -12,8 +12,8 @@ namespace CSharpSolutions._2021
      */
     class _2021Day03 : Solver
     {
-        static readonly List<string> fileInput = new List<string>(File.ReadAllLines("A:/AOCINPUTS/day03.txt"));
-        static readonly List<string> fileInput2 = new List<string>(File.ReadAllLines("A:/AOCINPUTS/day03.txt"));
+        static readonly List<string> fileInput = new(File.ReadAllLines("A:/AOCINPUTS/day03.txt"));
+        static readonly List<string> fileInput2 = new(File.ReadAllLines("A:/AOCINPUTS/day03.txt"));
         
         public static int PartOne() => FindPowerConsumption(fileInput);
 

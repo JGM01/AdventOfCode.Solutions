@@ -11,7 +11,7 @@ namespace CSharpSolutions._2021
     class _2021Day01 : Solver
     {
 
-        static readonly List<string> fileInput = new List<string>(File.ReadAllLines("A:/AOCINPUTS/day01.txt"));
+        static readonly List<string> fileInput = new(File.ReadAllLines("A:/AOCINPUTS/day01.txt"));
         public static int PartOne()
         {
             var x = 0;
