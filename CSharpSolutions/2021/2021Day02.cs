@@ -2,16 +2,17 @@
 using System.Collections.Generic;
 using System.IO;
 
-namespace AdventOfCode.SolutionsCSHARP._2021
+namespace CSharpSolutions._2021
 {
+    /* ADVENT OF CODE 2021 DAY 02
+     * LINK TO PROBLEM: https://adventofcode.com/2021/day/2
+     */
     class _2021Day02 : Solver
     {
-
-        public static readonly List<string> fileInput = new List<string>(File.ReadAllLines("A:/AOCINPUTS/day02.txt"));
+        static readonly List<string> fileInput = new(File.ReadAllLines("A:/AOCINPUTS/day02.txt"));
 
         public static int PartOne()
         {
-
             var hVal = 0;
             var depth = 0;
 
@@ -33,10 +34,9 @@ namespace AdventOfCode.SolutionsCSHARP._2021
                         break;
                 }
             }
-
             return depth * hVal;
-
         }
+
         public static int PartTwo()
         {
 
@@ -63,10 +63,7 @@ namespace AdventOfCode.SolutionsCSHARP._2021
                         break;
                 }
             }
-
             return depth * hVal;
-
         }
-
     }
 }
