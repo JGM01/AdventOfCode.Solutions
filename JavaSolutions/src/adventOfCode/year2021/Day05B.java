@@ -39,19 +39,17 @@ public class Day05B implements Problem {
 
 record Line(Point p1, Point p2) {
     public boolean inLine(int x, int y) {
+        boolean yInRange = (y <= p1.y() && y >= p2.y()) ^ (y >= p1.y() && y <= p2.y());
+        boolean xInRange = (x <= p1.x() && x >= p2.x()) ^ (x >= p1.x() && x <= p2.x());
         if (x == p1.x() && x == p2.x()) {
-            return (y <= p1.y() && y >= p2.y()) ^ (y >= p1.y() && y <= p2.y());
+            return yInRange;
         } else if (y == p1.y() && y == p2.y()) {
-            return (x <= p1.x() && x >= p2.x()) ^ (x >= p1.x() && x <= p2.x());
+            return xInRange;
         } else {
-            try {
+            if (xInRange && yInRange) {
                 int m = (p1.y() - p2.y()) / (p1.x() - p2.x());
-                if ((x <= p1.x() && x >= p2.x()) ^ (x >= p1.x() && x <= p2.x()) && (y <= p1.y() && y >= p2.y())
-                        ^ (y >= p1.y() && y <= p2.y()))
-                    return y == m * x + (m * -p2.x() + p2.y());
-                else
-                    return false;
-            } catch (Exception e) {
+                return y == m * x + (m * -p2.x() + p2.y());
+            } else {
                 return false;
             }
         }
