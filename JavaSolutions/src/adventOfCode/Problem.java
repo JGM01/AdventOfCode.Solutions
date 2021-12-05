@@ -1,3 +1,5 @@
+package adventOfCode;
+
 /**
  * Represents a solution with a standard input stream that returns an integer
  * value.

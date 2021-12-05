@@ -1,14 +1,18 @@
+package adventOfCode;
+
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.stream.Stream;
+
+import adventOfCode.year2021.Day05A;
 
 public class Solver {
     private final static String FILE_NAME = "input.txt";
 
     public static void main(String[] args) {
         // change this to be the current day/part
-        Problem problem = new Day02A();
+        Problem problem = new Day05A();
 
         try (var br = new BufferedReader(new FileReader(FILE_NAME))) {
             Stream<String> input = br.lines();

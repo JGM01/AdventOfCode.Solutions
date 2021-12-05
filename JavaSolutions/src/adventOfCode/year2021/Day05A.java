@@ -1,5 +1,9 @@
+package adventOfCode.year2021;
+
 import java.util.List;
 import java.util.stream.Stream;
+
+import adventOfCode.Problem;
 
 public class Day05A implements Problem {
 
