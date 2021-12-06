@@ -19,19 +19,17 @@ namespace CSharpSolutions._2021
 
         static long Solve(int[] arr, int T)
         {
-            long fish = 0;
-
-            long[,] dp = new long[T + 1, 9];
-
-            for (int i = 0; i <= 8; i++) dp[0, i] = 1;
-
-            for (int days = 1; days <= T; days++)
-                for (int state = 0; state <= 8; state++)
-                    dp[days, state] = state == 0 ? dp[days - 1, 6] + dp[days - 1, 8] : dp[days - 1, state - 1];
-
-            foreach (int i in arr) fish += dp[T, i];
-
-            return fish;
+            var dp = Enumerable.Range(0, 8).Select(i => (long)arr.Count(n => n == i)).ToArray();
+            for (var day = 1; day <= T; day++)
+            {
+                var zeroes = dp[0];
+                for (var i = 0; i <= 7; i++)
+                    dp[i] = dp[i + 1];
+                
+                dp[6] += zeroes;
+                dp[8] = zeroes;
+            }
+            return dp.Sum();
         }
     }
 }
