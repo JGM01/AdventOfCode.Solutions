@@ -1,7 +1,11 @@
+package adventOfCode.year2021;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Stream;
+
+import adventOfCode.Problem;
 
 public class Day03B implements Problem {
 
