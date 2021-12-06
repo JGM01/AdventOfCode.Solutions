@@ -23,8 +23,7 @@ namespace CSharpSolutions._2021
             for (var day = 1; day <= T; day++)
             {
                 var zeroes = dp[0];
-                for (var i = 0; i <= 7; i++)
-                    dp[i] = dp[i + 1];
+                for (var i = 0; i <= 7; i++) dp[i] = dp[i + 1];
                 
                 dp[6] += zeroes;
                 dp[8] = zeroes;
