@@ -13,6 +13,8 @@ namespace CSharpSolutions
             Console.WriteLine($"DAY 2 PART 2: {_2021Day02.PartTwo()}");
             Console.WriteLine($"DAY 3 PART 1: {_2021Day03.PartOne()}");
             Console.WriteLine($"DAY 3 PART 2: {_2021Day03.PartTwo()}");
+            Console.WriteLine($"DAY 6 PART 1: {_2021Day06.PartOne()}");
+            Console.WriteLine($"DAY 6 PART 2: {_2021Day06.PartTwo()}");
         }
     }
 }
