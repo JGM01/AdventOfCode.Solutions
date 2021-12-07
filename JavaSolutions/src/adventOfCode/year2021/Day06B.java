@@ -15,13 +15,13 @@ public class Day06B implements Problem {
         int days = 256;
         while (days-- > -1) {
             size = data.chars().mapToObj(c -> BigInteger.ONE).reduce(BigInteger.ZERO, BigInteger::add);
-            zeroCount = data.chars().filter(f -> f == '0')
+            zeroCount = data.chars().parallel().filter(f -> f == '0')
                     .mapToObj(f -> BigInteger.ONE).reduce(BigInteger.ZERO,
                             BigInteger::add);
 
-            data = new String(data.chars()
-                    .map(f -> f == '0' ? '6' : ((char) f - 1)).mapToObj(Character::toString)
-                    .reduce(new String(), String::concat));
+            data = data.chars().parallel()
+                    .map(f -> f == '0' ? '6' : f - 1).mapToObj(Character::toString)
+                    .reduce(new String(), String::concat);
 
             for (BigInteger i = BigInteger.ZERO; i.compareTo(zeroCount) < 0; i = i.add(BigInteger.ONE)) {
                 data += "8";
