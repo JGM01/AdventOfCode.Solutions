@@ -15,24 +15,21 @@ namespace CSharpSolutions._2021
         static readonly List<string> fileInput = new(File.ReadAllLines("A:/AOCINPUTS/day03.txt"));
         static readonly List<string> fileInput2 = new(File.ReadAllLines("A:/AOCINPUTS/day03.txt"));
         
-        public static int PartOne() => FindPowerConsumption(fileInput);
+        public static int PartOne() => FindPowerConsumption(fileInput, "", "");
 
         public static int PartTwo() => FindOxygenRating(fileInput) * FindScrubberRating(fileInput2);
 
-        static (int, int) CountBitsPerIndex(List<string> l, int i)
+        static (int, int) CountBitsPerIndex(List<string> l, int i, int amtZero)
         {
-            var amtZero = 0;
             foreach (string j in l) amtZero += j[i] == '0' ? 1 : 0;
             return (amtZero , l.Count-amtZero);
         }
         
-        static int FindPowerConsumption(List<string> diagnosticReport)
+        static int FindPowerConsumption(List<string> diagnosticReport, string gammaRate, string epsilonRate)
         {
-            var gammaRate = "";
-            var epsilonRate = "";
             for (int i = 0; i < 12; i++)
             {
-                (var amtZero, var amtOne) = CountBitsPerIndex(diagnosticReport, i);
+                (var amtZero, var amtOne) = CountBitsPerIndex(diagnosticReport, i, 0);
 
                 epsilonRate += amtZero > amtOne ? '1' : '0';
                 gammaRate += amtZero > amtOne ? '0' : '1';
@@ -44,7 +41,7 @@ namespace CSharpSolutions._2021
         {
             for (int i =0; i < 12; i++)
             {
-                (var amtZero, var amtOne) = CountBitsPerIndex(diagnosticReport, i);
+                (var amtZero, var amtOne) = CountBitsPerIndex(diagnosticReport, i, 0);
 
                 if (diagnosticReport.Count == 1) break; 
                 diagnosticReport.RemoveAll(c => c[i] != ((amtOne > amtZero || amtOne == amtZero)? '1' : '0'));
@@ -57,7 +54,7 @@ namespace CSharpSolutions._2021
         {
             for (int i =0; i < 12; i++)
             {
-                (var amtZero, var amtOne) = CountBitsPerIndex(diagnosticReport, i);
+                (var amtZero, var amtOne) = CountBitsPerIndex(diagnosticReport, i, 0);
 
                 if (diagnosticReport.Count == 1) break; 
                 diagnosticReport.RemoveAll(c => c[i] != ((amtOne > amtZero || amtOne == amtZero)? '0' : '1'));
