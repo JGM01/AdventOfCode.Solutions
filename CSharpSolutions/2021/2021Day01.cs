@@ -11,32 +11,20 @@ namespace CSharpSolutions._2021
     class _2021Day01 : Solver
     {
 
-        static readonly List<string> fileInput = new(File.ReadAllLines("A:/AOCINPUTS/day01.txt"));
-        public static int PartOne()
-        {
-            var x = 0;
-            var l = StringToIntList(fileInput, x);
+        static readonly List<int> fileInput = new(File.ReadAllLines("A:/AOCINPUTS/day01.txt").Select(int.Parse));
+        public static int PartOne() => Solve(fileInput, true, 0);
+        public static int PartTwo() => Solve(fileInput,false, 0);
 
-            var bigger = 0;
+        public static int Solve(List<int> l, bool part1, int bigger)
+        {   
             for (int i = 1; i < l.Count; i++)
-                if (l[i] > l[i - 1])
-                    bigger++;
-
-            return bigger;
-
-        }
-
-        public static int PartTwo()
-        {
-            var x = 0;
-            var l = StringToIntList(fileInput, x);
-
-            var bigger = 0;
-            for (int i = 3; i < l.Count; i++)
-                if (l[i - 2] + l[i - 1] + l[i] > l[i - 3] + l[i - 2] + l[i - 1])
-                    bigger++;
-
+                bigger += l[i] > l[i - 1] && part1 ? 1 : 0;
+            
+            for (int j = 3; j < l.Count; j++)
+                bigger += l[j - 2] + l[j - 1] + l[j] > l[j - 3] + l[j - 2] + l[j - 1] && !part1 ? 1 : 0;
+            
             return bigger;
         }
+
     }
 }
