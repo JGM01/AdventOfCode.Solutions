@@ -20,7 +20,7 @@ namespace CSharpSolutions._2021
                 Enumerable
                     .Range(min, max - min + 1)
                     .Min(i => fileInput.Select(x => System.Math.Abs(x - i))
-                    .Sum()) : 
+                    .Sum());
                 Enumerable
                     .Range(min, max - min + 1)
                     .Min(i => fileInput.Select(x => System.Math.Abs(x - i))
